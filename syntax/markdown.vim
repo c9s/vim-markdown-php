@@ -7,6 +7,7 @@ if exists("b:current_syntax")
   finish
 endif
 
+runtime! syntax/html.vim
 runtime! syntax/php.vim
 unlet! b:current_syntax
 
@@ -15,7 +16,6 @@ syn case ignore
 
 syn match markdownValid '[<>]\S\@!'
 syn match markdownValid '&\%(#\=\w*;\)\@!'
-
 
 syn match markdownLineStart "^[<@]\@!" nextgroup=@markdownBlock
 
