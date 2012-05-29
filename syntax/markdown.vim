@@ -24,8 +24,10 @@ syn cluster markdownInline contains=markdownLineBreak,markdownLinkText,markdownI
 
 syn match markdownH1 "^.\+\n=\+$" contained contains=@markdownInline,markdownHeadingRule
 syn match markdownH2 "^.\+\n-\+$" contained contains=@markdownInline,markdownHeadingRule
+syn match markdownWikiLink "\[\[.\+\]\]"
 
 syn match markdownHeadingRule "^[=-]\+$" contained
+
 
 syn region markdownH1 matchgroup=markdownHeadingDelimiter start="##\@!"      end="#*\s*$" keepend oneline contains=@markdownInline contained
 syn region markdownH2 matchgroup=markdownHeadingDelimiter start="###\@!"     end="#*\s*$" keepend oneline contains=@markdownInline contained
@@ -88,6 +90,7 @@ hi def link markdownBlockquote            Comment
 hi def link markdownRule                  PreProc
 
 hi def link markdownLinkText              htmlLink
+hi def link markdownWikiLink                  htmlLink
 hi def link markdownIdDeclaration         Typedef
 hi def link markdownId                    Type
 hi def link markdownAutomaticLink         markdownUrl
